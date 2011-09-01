@@ -8,7 +8,7 @@ Getting started
 
 First off, make sure that development.bat points to where you've installed 
 Lighty and adjust accordingly. Then run development.bat, start your browser and 
-point it to http://localhost/
+point it to http://localhost/.
 
 
 Features
@@ -47,13 +47,15 @@ Known shortcomings
 ------------------
 
 TODO:
-• Create one or more branches for bootstraps
-• When accessing `/path/to/` the file `/path/to/index.haml` should be tried
-• The server should return a 404 when the target HAML file does not exist
-• The current partials method requires passing the :locals option, which should 
+
+* Create one or more branches for bootstraps
+* When accessing `/path/to/` the file `/path/to/index.haml` should be tried
+* The server should return a 404 when the target HAML file does not exist
+* The current partials method requires passing the :locals option, which should 
 be optional instead
 
 README TODO:
-• Add information about obtaining Lighttpd
-• Add information about obtaining Ruby
-• List required and recommended gems
+
+* Add information about obtaining Lighttpd
+* Add information about obtaining Ruby
+* List required and recommended gems
