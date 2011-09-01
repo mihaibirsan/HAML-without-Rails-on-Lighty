@@ -1,0 +1,12 @@
+This is the basic setup to start developing front-end templates using HAML. 
+This setup is designed for a Windows machine with Ruby and Lighttpd binaries 
+installed, plus a bunch of Ruby gems.
+
+TODO:
+• Create one or more branches for bootstraps
+
+README TODO:
+• Add information about obtaining Lighttpd
+• Add information about obtaining Ruby
+• List required and recommended gems
+• Document the basic setup

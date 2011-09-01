@@ -1,0 +1,8 @@
+- here ||= 'menu'
+%ul
+  %li
+    %a{ :href => '/', :class => ('homepage' == here ? 'current' : nil) } Homepage
+  %li
+    %a{ :href => '/secondary', :class => ('secondary' == here ? 'current' : nil) } Secondary
+  %li
+    %a{ :href => '/tertiary', :class => ('tertiary' == here ? 'current' : nil) } Tertiary
