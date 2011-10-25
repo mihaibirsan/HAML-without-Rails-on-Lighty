@@ -26,6 +26,9 @@ resolve to a file on the disk. The root URL tries to render `index.haml`. Any
 other URL of the form `path/to/foo` will try to render `path/to/foo.haml`. The 
 server is not configured to handle any other types of requests.
 
+You can obtain a list of available templates in your browser by navigating to
+http://localhost/! when the server is running. This invokes `list.rb`.
+
 ### Rendering partials
 
 You can render partials using a Rails-like method: 
@@ -42,6 +45,18 @@ You can override the default layout using a HAML comment on the first line of
 the template you're rendering, as follows: `-### layouts/other.haml`. The syntax
 is `-###` followed by a space and the path to the other layout.
 
+### Helpers
+
+Various helper methods have been added to `helpers.rb`. This should be more of 
+an ad-hoc file, modified to suit each project.
+
+### Exporting HTML
+
+The `export.rb` script will create a HTML version of the site and save it in the
+`.export` directory, as follows: for each HAML file that is not a partial and is
+not a layout, an HTML file is generated. Every other non-HAML file is copied as 
+is.
+
 
 Known shortcomings
 ------------------
@@ -49,10 +64,12 @@ Known shortcomings
 TODO:
 
 * Create one or more branches for bootstraps
-* When accessing `/path/to/` the file `/path/to/index.haml` should be tried
 * The server should return a 404 when the target HAML file does not exist
-* The current partials method requires passing the :locals option, which should 
-be optional instead
+* Have the `!` at the end of a directory URL work for subdirectories as well 
+* Have `export.rb` take a command line `--zip` to generate a zip file.
+* Have `export.rb` also parse and convert LESS files. (This feature is currently
+  broken because gem `therubyracer` doesn't compile on Windows.)
+* Add examples of using the included helpers.
 
 README TODO:
 

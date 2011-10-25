@@ -1,39 +1,27 @@
 require 'rubygems'
 require 'cgi'
-require 'haml'
-require 'tilt'
 
 cgi = CGI.new
 
-# Helpers
-def render(options)
-  template = Tilt.new(options[:partial].gsub(/([^\/]+)$/, "_\\1.haml"))
-  template.render(self, options[:locals])
-end
+begin
+  
+  require "common.rb"
+  require "helpers.rb"
 
-
-# Probe for custom layout request
-template_filename = cgi.params['file'].first
-layout_filename = 'layouts/default.haml'
-File.open(template_filename, 'r') do |file|
-  layout_filename = $1 if file.readline.match /^-### (.+)$/
-end
-
-
-# Actual rendering
-template = Tilt.new(template_filename)
-output = nil
-
-if template_filename.match(/\.haml$/) && !template_filename.match(/(\/|^)_(.+).haml$/)
-  begin
-    layout = Tilt.new(layout_filename)
-    output = layout.render(self) { template.render }
-  rescue
+  File.open('renderer.access.log', 'a') do |file|
+    file.puts cgi.params.inspect
   end
-end
+  
+  cgi.out { template_render(cgi.params['file'].first) }
 
-if output.nil?
-  output = template.render(self)
-end
+rescue => e
+  
+  File.open('renderer.error.log', 'a') do |file|
+    file.puts e.message
+    file.puts e.backtrace
+    file.puts "\n\n"
+  end
+  
+  cgi.out { "<pre>#{e.message}\n#{e.backtrace.join("\n")}</pre>" }
 
-cgi.out { output }
+end
