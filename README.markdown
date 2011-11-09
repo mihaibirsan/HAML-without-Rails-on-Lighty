@@ -67,8 +67,6 @@ TODO:
 * The server should return a 404 when the target HAML file does not exist
 * Have the `!` at the end of a directory URL work for subdirectories as well 
 * Have `export.rb` take a command line `--zip` to generate a zip file.
-* Have `export.rb` also parse and convert LESS files. (This feature is currently
-  broken because gem `therubyracer` doesn't compile on Windows.)
 * Add examples of using the included helpers.
 
 README TODO:
@@ -76,3 +74,5 @@ README TODO:
 * Add information about obtaining Lighttpd
 * Add information about obtaining Ruby
 * List required and recommended gems
+* Add information about using YAML data.
+* Add information about using sections in views
