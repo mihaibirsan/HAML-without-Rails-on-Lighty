@@ -22,6 +22,7 @@ def nav_menu(array, options = {})
     array.each do |item|
       klass_attr = [ options[:li_class] ]
       klass_attr << options[:li_selected_class] if item[:current] === true
+      klass_attr << item[:li_class] unless item[:li_class].nil?
       haml_tag :li, :class => klass_attr.join(' ')  do
         haml_tag :a, item[:title], :href => item[:href]
         haml_concat item[:after_a] if item[:after_a]
