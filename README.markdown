@@ -2,6 +2,16 @@ This is the basic setup to start developing front-end templates using HAML.
 This setup is designed for a Windows machine with Ruby and Lighttpd binaries 
 installed, plus a bunch of Ruby gems.
 
+Installation
+------------
+
+* Install Lighty http://en.wlmp-project.net/downloads.php?cat=lighty&type=ssl
+* Install Ruby 1.8.7 http://rubyforge.org/frs/download.php/74293/rubyinstaller-1.8.7-p334.exe
+* Install the following gems:
+  - HAML: `gem install haml`
+  - YAML: `gem install yaml`
+  - TILT: `gem install tilt`
+
 
 Getting started
 ---------------
@@ -71,8 +81,5 @@ TODO:
 
 README TODO:
 
-* Add information about obtaining Lighttpd
-* Add information about obtaining Ruby
-* List required and recommended gems
 * Add information about using YAML data.
 * Add information about using sections in views
