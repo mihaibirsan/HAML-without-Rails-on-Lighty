@@ -9,7 +9,6 @@ Installation
 * Install Ruby 1.8.7 http://rubyforge.org/frs/download.php/74293/rubyinstaller-1.8.7-p334.exe
 * Install the following gems:
   - HAML: `gem install haml`
-  - YAML: `gem install yaml`
   - TILT: `gem install tilt`
 
 
