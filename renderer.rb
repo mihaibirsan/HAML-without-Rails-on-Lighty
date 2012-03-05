@@ -5,8 +5,8 @@ cgi = CGI.new
 
 begin
   
-  require "common.rb"
-  require "helpers.rb"
+  require "./common.rb"
+  require "./helpers.rb"
 
   File.open('renderer.access.log', 'a') do |file|
     file.puts cgi.params.inspect

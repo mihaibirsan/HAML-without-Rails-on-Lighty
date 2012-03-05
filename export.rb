@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'fileutils'
-require "common.rb"
-require "helpers.rb"
+require "./common.rb"
+require "./helpers.rb"
 
 $export = true # templates and other scripts check to see if this is defined
 EXPORT_DIR = ".export"
