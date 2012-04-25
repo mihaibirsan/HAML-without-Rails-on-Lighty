@@ -77,8 +77,16 @@ TODO:
 * Have the `!` at the end of a directory URL work for subdirectories as well 
 * Have `export.rb` take a command line `--zip` to generate a zip file.
 * Add examples of using the included helpers.
+* When exporting, the haml files different from index.html need to be relinked;
+  either that or match .html to .haml in the Lighttpd
+* Move to a Ruby server (Webrik, Sinatra, etc)
+* Make into a gem so that system files are separated from project structure and 
+  updates are easy to handle; spec gem dependencies
+* Give it a fancy name (maybe "Sassy Hamlets")
 
 README TODO:
 
 * Add information about using YAML data.
 * Add information about using sections in views
+* The biggest advantage over WAMP is that the configuration is self-contained and
+  configuration is minimal
